@@ -15,6 +15,16 @@ html, body {
   top: 0;
 }
 
+h3 {
+  position: absolute;
+  width: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #fff;
+  text-align: center;
+  top: 5%;
+  font-size: 400%;
+}
+
 #scene {
   padding: 0;
   margin: 0;
@@ -38,7 +48,7 @@ text-align: center;
   right: -8%;
   bottom: -8%;
   background-color: #111;
-  background-image: url('images/galaxy.jpg');
+  background-image: url('images/galaxy-min.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -77,7 +87,7 @@ text-align: center;
   width: 150px;
   left: 50%;
   bottom: 4%;
-  background: url('images/heart-sitting.png');
+  background: url('images/heart-sitting-min.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom center;
@@ -89,7 +99,7 @@ text-align: center;
   width: 150px;
   left: 34%;
   bottom: 37%;
-  background: url('images/heart-walking.png');
+  background: url('images/heart-walking-min.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom center;
