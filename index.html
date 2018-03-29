@@ -5,8 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bobby Feeno</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <!-- Google Fonts  -->
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700" rel="stylesheet">
+  <!-- FontAwesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>Hello World!</h1>
+  <div class="wrapper">
+    <!-- Parallax Album Art -->
+    <ul id="scene">
+      <li class="layer" data-depth="0.2">
+        <div class="galaxy"></div>
+      </li>
+      <li class="layer" data-depth="0.3">
+        <div class="bobby"></div>
+      </li>
+      <li class="layer" data-depth="0.25">
+        <div class="heart-sitting"></div>
+      </li>
+      <li class="layer" data-depth="0.37">
+        <div class="heart-walking"></div>
+      </li>
+    </ul>
+    <div class="vignette"></div>
+
+    <!-- Navigation -->
+    <nav>
+      <div class="nav nav-social">
+        <a href="" class="menu-button">Social</a>
+        <ul class="menu">
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        </ul>
+      </div>
+      <div class="nav nav-store">
+        <a href="#"  class="menu-button">Store</a>
+        <ul class="menu">
+          <li>
+            <a href="https://bi01ch7abhlx4de8-1522860098.shopifypreview.com">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav nav-music">
+        <a href="#" class="menu-button">Music</a>
+        <ul class="menu">
+          <li><a href="#"><i class="fab fa-spotify"></i></a></li>
+          <li><a href="#"><i class="fab fa-itunes"></i></a></li>
+        </ul>
+      </div>
+      <div class="nav nav-podcast">
+          <a href="#"  class="menu-button">Podcast</a>
+          <ul class="menu">
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+      </div>
+    </nav>
+  </div>  <!--  End Wrapper -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    document.querySelector('.menu-button').addEventListener('click', handleClick);
+
+function handleClick(e) {
+   e.preventDefault();
+   console.log('clicked!');
+   document.querySelector('.circle').classList.toggle('open');
+}
+  </script>
 </body>
 </html>

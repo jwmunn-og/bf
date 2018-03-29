@@ -1,0 +1,204 @@
+html, body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+#scene {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#scene, .layer {
+display: block;
+padding: 0;
+margin: 0;
+width: 100%;
+height: 100%;
+text-align: center;
+}
+
+.galaxy {
+  position: absolute;
+  top: -8%;
+  left: -8%;
+  right: -8%;
+  bottom: -8%;
+  background-color: #111;
+  background-image: url('images/galaxy.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  animation: dizzy 25s infinite;
+}
+
+@keyframes dizzy {
+  0% {
+    transform: scale(.9);
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1);
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: scale(.9);
+    transform: rotate(0deg);
+  }
+}
+
+.bobby {
+  position: absolute;
+  height: 90%;
+  width: 100%;
+  bottom: -5%;
+  background: url('images/bobby-feeno-min.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+}
+
+.heart-sitting {
+  position: absolute;
+  height: 20%;
+  width: 150px;
+  left: 50%;
+  bottom: 4%;
+  background: url('images/heart-sitting.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+}
+
+.heart-walking {
+  position: absolute;
+  height: 20%;
+  width: 150px;
+  left: 34%;
+  bottom: 37%;
+  background: url('images/heart-walking.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+}
+
+.vignette {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 2px 2px 500px rgba(0, 0, 0, .35),
+              inset -2px 2px 500px rgba(0, 0, 0, .35),
+              inset 2px -2px 500px rgba(0, 0, 0, .35),
+              inset -2px -2px 500px rgba(0, 0, 0, .35)
+  ;
+}
+
+/* Navigation */
+
+.nav {
+  position: absolute;
+}
+
+.nav a {
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  text-decoration: none;
+  text-shadow: #6c72b8 1px 0 10px;
+  text-transform: uppercase;
+  transition: all .2s ease;
+  opacity: .9;
+}
+
+.nav a:hover {
+  opacity: 1;
+  text-shadow: #6c72b8 2px 0 15px;
+}
+
+.nav-social {
+  top: 2rem;
+  left: 2rem;
+}
+
+.nav-store {
+  top: 2rem;
+  right: 2rem;
+}
+
+.nav-music {
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.nav-podcast {
+  bottom: 2rem;
+  right: 2rem;
+}
+
+/* Radial Flyout */
+
+.circular-menu {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  /* position: relative; */
+}
+
+.menu {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+  opacity: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  transform: scale(0);
+
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.menu li {
+  padding: 5px 0;
+  margin-top: 5px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.menu li {
+  background-image: radial-gradient(circle closest-side, #6c72b8, rgba(0,0,0,0));
+}
+
+.open.menu {
+  opacity: 1;
+
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+}
+
+.nav-music .menu, .nav-podcast .menu {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+}
