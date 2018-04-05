@@ -164,7 +164,7 @@ text-align: center;
   position: absolute;
 }
 
-.nav a {
+.nav a, .menu-button {
   color: #fff;
   font-family: 'Josefin Sans', sans-serif;
   text-decoration: none;
@@ -202,13 +202,13 @@ text-align: center;
 
 /* Radial Flyout */
 
-.menu {
+.menu, .submenu {
   margin: 0;
   list-style: none;
   padding-left: 0;
   /* opacity: 0; */
   color: #fff;
-  text-align: center;
+  text-align: left;
   font-size: 1rem;
 
   /* -webkit-transform: scale(0);
@@ -220,17 +220,21 @@ text-align: center;
   transition: all 0.4s ease-out;
 }
 
+.submenu {
+  opacity: 0;
+  transition: all .2s ease;
+}
+
 .menu-button {
   font-size: 1.5rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
-.menu li {
+.submenu li {
   padding: 5px 0;
   margin-top: 5px;
   text-align: left;
-  font-size: 1rem;
-  font-weight: normal;
 }
 
 .menu.text-right li {
@@ -239,10 +243,6 @@ text-align: center;
 
 .text-right {
   text-align: right;
-}
-
-.menu li {
-  background-image: radial-gradient(circle closest-side, #6c72b8, rgba(0,0,0,0));
 }
 
 .open.menu {
@@ -257,6 +257,10 @@ text-align: center;
   /* position: absolute; */
   bottom: 2rem;
   width: 100%;
+}
+
+.nav-music .submenu, .nav-podcast .submenu {
+  padding-bottom: .75rem;
 }
 
 
@@ -399,6 +403,10 @@ text-align: center;
   left: 28px;
   background: #fff;
   border-radius: 4px;
+}
+
+.hide {
+
 }
 
 .show {

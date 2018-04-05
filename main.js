@@ -4,25 +4,51 @@
   var parallaxInstance = new Parallax(scene);
 
   const triggers = document.querySelectorAll('.menu-button');
-  // triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
-  // triggers.forEach(trigger => trigger.parentElement.addEventListener('mouseleave', handleLeave));
+  const submenu = document.querySelectorAll('.submenu');
+  // console.log(submenu);
+  triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
+  triggers.forEach(trigger => trigger.parentElement.addEventListener('mouseleave', handleLeave));
   triggers.forEach(trigger => trigger.addEventListener('click', handleClick));
 
+  let ul = null;
+
   function handleEnter() {
-    this.nextElementSibling.classList.add('open');
+    if (this.previousElementSibling !== null) {
+      ul = this.previousElementSibling.children[0];
+    } else if (this.nextElementSibling !== null) {
+      ul = this.nextElementSibling.children[0];
+    }
+    console.log(ul);
+    ul.classList.add('show');
   }
 
   function handleLeave() {
-    const c = this.childNodes[3];
-    console.log(c);
-    c.classList.remove('open');
+    ul.classList.remove('show');
   }
 
   function handleClick(e) {
     e.preventDefault();
-    console.log('clicked!');
-    console.log(this.parentElement);
-    this.nextElementSibling.classList.toggle('open');
+    const ul = this.nextElementSibling.children[0];
+    console.log(ul);
+    ul.classList.toggle('hide');
+    ul.classList.toggle('show');
+    // console.log(ul, ul.childElementCount);
+    // console.log('clicked!');
+    // for (let i = 0; i < ul.childElementCount; i++) {
+    //   setInterval(function() {
+    //     ul.children[i].classList.toggle('show');
+    //     ul.children[i].classList.toggle('hide');
+    //   }, 300);
+    // }
+
+    // this.nextElementSibling.classList.toggle('open');
+  }
+
+  function toggleView(context) {
+    const ul = context.nextElementSibling.children[0];
+    console.log(ul);
+    ul.classList.toggle('hide');
+    ul.classList.toggle('show');
   }
 
   // Music
