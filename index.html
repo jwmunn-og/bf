@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" type="text/css" href="style.css" />
   <!-- Google Fonts  -->
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
   <!-- FontAwesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
     crossorigin="anonymous"></script>
@@ -36,7 +36,7 @@
         <div class="heart-walking"></div>
       </li>
     </ul>
-    <!-- <div class="vignette"></div> -->
+    <div class="vignette"></div>
     <div class='player-wrapper' data-depth="0.9">
       <div class='player-circles'>
         <div class='circle c-1'></div>
@@ -48,6 +48,8 @@
       </div>
     </div>
 
+
+
     <!-- Navigation -->
     <nav>
       <div class="nav nav-social">
@@ -55,80 +57,93 @@
         <ul class="menu">
           <li>
             <a href="https://www.instagram.com/arianfoster/">
-              <i class="fab fa-instagram"></i>
+              <i class="fab fa-instagram"></i> Instagram
             </a>
           </li>
           <li>
             <a href="https://twitter.com/arianfoster">
-              <i class="fab fa-twitter"></i>
+              <i class="fab fa-twitter"></i> Twitter
             </a>
           </li>
           <li>
             <a href="https://www.facebook.com/ArianFoster23/?__tn__=C-R">
-              <i class="fab fa-facebook"></i>
+              <i class="fab fa-facebook"></i> Facebook
             </a>
           </li>
         </ul>
       </div>
       <div class="nav nav-store">
         <a href="#" class="menu-button">Store</a>
-        <ul class="menu">
+        <ul class="menu text-right">
           <li>
             <a href="https://bi01ch7abhlx4de8-1522860098.shopifypreview.com">
-              <i class="fas fa-shopping-cart"></i>
+              Shop <i class="fas fa-shopping-cart"></i>
             </a>
           </li>
         </ul>
       </div>
       <div class="nav nav-music">
-        <a href="#" class="menu-button">Music</a>
         <ul class="menu">
           <li>
             <a href="#">
-              <i class="fab fa-spotify"></i>
+              <i class="fab fa-spotify"></i> Spotify
             </a>
           </li>
           <li>
             <a href="#">
-              <i class="fab fa-itunes"></i>
+                <img class="itunes" src="images/itunes.png" alt="iTunes logo" /> iTunes
             </a>
+          </li>
+          <li>
+            <a href="#">
+                <img class="tidal" src="images/tidal.png" alt="Tidal logo" /> Tidal
+            </a>
+          </li>
+          <li class="stay-open">
+            <a href="#" class="menu-button">Music</a>
           </li>
         </ul>
       </div>
-      <div class="nav nav-podcast">
-        <a href="#" class="menu-button">Podcast</a>
-        <ul class="menu">
-          <li>
-            <a href="https://itunes.apple.com/us/podcast/now-what-with-arian-foster/id1291152192?mt=2">
-              <i class="fas fa-podcast"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/channel/UCAB03M7mYqGLyxPHbmE0wYw">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://m.soundcloud.com/nowwhatpodcast">
-              <i class="fab fa-soundcloud"></i>
-            </a>
-          </li>
-        </ul>
+      <div>
+        <div class="nav nav-podcast">
+          <ul class="menu text-right">
+            <li>
+              <a href="https://itunes.apple.com/us/podcast/now-what-with-arian-foster/id1291152192?mt=2">
+                Podcast <i class="fas fa-podcast"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UCAB03M7mYqGLyxPHbmE0wYw">
+                Youtube <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.stitcher.com/podcast/vsporto/now-what-with-arian-foster">
+                Stitcher <img class="stitcher" src="images/stitcher-icon-logo.png" alt="stitcher logo" />
+              </a>
+            </li>
+            <li>
+              <a href="https://m.soundcloud.com/nowwhatpodcast">
+                Soundcloud <i class="fab fa-soundcloud"></i>
+              </a>
+            </li>
+            <li class="show-nav">
+              <a href="#" class="menu-button">Podcast</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
+
   </div>
   <!--  End Wrapper -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
   <script src="main.js"></script>
+  <script src="js/dist/circleMenu.min.js"></script>
   <script>
-    document.querySelector('.menu-button').addEventListener('click', handleClick);
-
-    function handleClick(e) {
-      e.preventDefault();
-      console.log('clicked!');
-      document.querySelector('.circle').classList.toggle('open');
-    }
+    var el = '.js-menu';
+    var myMenu = cssCircleMenu(el);
   </script>
 </body>
 

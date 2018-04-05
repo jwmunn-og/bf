@@ -1,16 +1,11 @@
 (function(){
-  var wrapper = document.querySelector('.wrapper');
-  wrapper.addEventListener('click', function(e) {
-    console.log(this, e.target);
-  });
-
   // Parallax
   var scene = document.querySelector('#scene');
   var parallaxInstance = new Parallax(scene);
 
   const triggers = document.querySelectorAll('.menu-button');
-  triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
-  triggers.forEach(trigger => trigger.parentElement.addEventListener('mouseleave', handleLeave));
+  // triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
+  // triggers.forEach(trigger => trigger.parentElement.addEventListener('mouseleave', handleLeave));
   triggers.forEach(trigger => trigger.addEventListener('click', handleClick));
 
   function handleEnter() {
