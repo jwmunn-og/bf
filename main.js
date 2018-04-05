@@ -26,14 +26,45 @@
   }
 
   // Music
+  const track1 = new Howl({
+    src: ['audio/088_wait-for-it-groove.mp3', 'audio/088_wait-for-it-groove.ogg'],
+    onend: function() {
+      togglePlay(musicTrigger);
+    }
+  });
+  const track2 = new Howl({
+    src: ['audio/079_noisy-vinyl-loop.mp3', 'audio/079_noisy-vinyl-loop.ogg'],
+    onend: function() {
+      togglePlay(musicTrigger);
+    }
+  });
+
+  const playlist = [track1, track2];
+
   const musicTrigger = document.querySelector('.controler');
   const circles = document.querySelector('.player-circles');
   musicTrigger.addEventListener('click', playPause);
 
-  function playPause() {
-    this.classList.toggle('paused');
-    this.classList.toggle('playing');
+  let currentTrack = track1, trackIdx = 0;
+
+  function togglePlay(e) {
+    e.classList.toggle('paused');
+    e.classList.toggle('playing');
     circles.classList.toggle('show');
+  }
+
+  function playPause() {
+    togglePlay(this);
+    if (currentTrack.playing()) {
+      currentTrack.stop();
+    } else {
+      currentTrack = playlist[trackIdx]
+      currentTrack.play();
+      trackIdx = (++trackIdx) % playlist.length;
+      console.log('Play', trackIdx);
+    }
+
+    console.log(track2.playing());
   }
 
 })();
