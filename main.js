@@ -1,4 +1,9 @@
 (function(){
+  var wrapper = document.querySelector('.wrapper');
+  wrapper.addEventListener('click', function(e) {
+    console.log(this, e.target);
+  });
+
   // Parallax
   var scene = document.querySelector('#scene');
   var parallaxInstance = new Parallax(scene);
