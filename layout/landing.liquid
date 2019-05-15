@@ -7,49 +7,76 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bobby Feeno</title>
 
+  <meta name="google-site-verification" content="77WE1mu7vw_edFBbn8qJEZbauGF4u4lutmeOEP0poW4" />
+
+  <!-- Social Metatags -->
+  <!-- FB -->
+  <meta property="og:type"   content="website" />
+  <meta property="og:title" content="Bobby Feeno&mdash;Flamingo &amp; Koval">
+  <meta property="og:description" content="Get merch, music &amp; more from the debut album.">
+  <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0015/2286/0098/files/bobby-feeno-fb.jpg">
+  <meta property="og:url" content="https://bobbyfeeno.com/">
+  <!-- Twitter -->
+  <meta name="twitter:site" content="@ArianFoster" />
+  <meta name="twitter:card" content="summary_large_image">
+
+  {{ 'landing.css' | asset_url | stylesheet_tag }}
   <link rel="stylesheet" type="text/css" href="style.css" />
   <!-- Google Fonts  -->
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
   <!-- FontAwesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
     crossorigin="anonymous"></script>
+  <!-- CSS Animate -->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  <!-- Howler -->
   <script src="https://cdn.jsdelivr.net/npm/howler@2.0.9/dist/howler.min.js"></script>
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'landing.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
+  {{ content_for_header }}
 
 </head>
 
 <body>
+  {{ content_for_layout }}
   <div class="wrapper">
+    <ul id="interactive-scene">
+      <li class="layer" data-depth="0.25">
+        <div class="heart-sitting">
+          <div class='player-wrapper' data-depth="0.9">
+            <div class='player-circles'>
+              <div class='circle c-1'></div>
+              <div class='circle c-2'></div>
+              <div class='circle c-3'></div>
+            </div>
+            <img src="https://cdn.shopify.com/s/files/1/0015/2286/0098/files/heart-sitting-min.png?7211721526328424092" />
+            <div class='btn player'>
+              <div class="controller paused"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
     <!-- Parallax Album Art -->
     <ul id="scene">
       <li class="layer" data-depth="0.2">
         <div class="galaxy"></div>
       </li>
+      <li class="layer" data-depth="0.5">
+        <div class="stars1"></div>
+      </li>
+      <li class="layer" data-depth="0.7">
+        <div class="stars2"></div>
+      </li>
       <li class="layer" data-depth="0.3">
         <div class="bobby"></div>
-      </li>
-      <li class="layer" data-depth="0.25">
-        <div class="heart-sitting">
-
-        </div>
       </li>
       <li class="layer" data-depth="0.37">
         <div class="heart-walking"></div>
       </li>
     </ul>
     <div class="vignette"></div>
-    <div class='player-wrapper' data-depth="0.9">
-      <div class='player-circles'>
-        <div class='circle c-1'></div>
-        <div class='circle c-2'></div>
-        <div class='circle c-3'></div>
-      </div>
-      <div class='btn player'>
-        <div class='controler paused'></div>
-      </div>
-    </div>
-
-
-
     <!-- Navigation -->
     <nav>
       <div class="nav nav-social">
@@ -86,8 +113,8 @@
           <li>
             <ul class="submenu">
               <li>
-                <a href="https://bi01ch7abhlx4de8-1522860098.shopifypreview.com">
-                  Shop test
+                <a href="/pages/store">
+                  Shop
                   <i class="fas fa-shopping-cart"></i>
                 </a>
               </li>
@@ -100,18 +127,18 @@
           <li>
             <ul class="submenu">
               <li>
-                <a href="#">
+                <a href="https://open.spotify.com/artist/0CsnCc2NMuEKNJDVyMwp6b?si=qpJwoFTaTk-SUJdu994_Kw">
                   <i class="fab fa-spotify"></i> Spotify
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <img class="itunes" src="images/itunes.png" alt="iTunes logo" /> iTunes
+                <a href="https://itunes.apple.com/us/album/a-friend-a-fan-a-kid-single/1365351883">
+                  <img class="itunes" src="https://cdn.shopify.com/s/files/1/0015/2286/0098/files/itunes.png?7211721526328424092" alt="iTunes logo" /> iTunes
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <img class="tidal" src="images/tidal.png" alt="Tidal logo" /> Tidal
+                <a href="https://tidal.com/artist/9696688">
+                  <img class="tidal" src="https://cdn.shopify.com/s/files/1/0015/2286/0098/files/tidal.png?7211721526328424092" alt="Tidal logo" /> Tidal
                 </a>
               </li>
             </ul>
@@ -128,7 +155,7 @@
               <ul class="submenu">
                 <li>
                   <a href="https://itunes.apple.com/us/podcast/now-what-with-arian-foster/id1291152192?mt=2">
-                    Podcast
+                    Apple Podcast
                     <i class="fas fa-podcast"></i>
                   </a>
                 </li>
@@ -141,7 +168,7 @@
                 <li>
                   <a href="https://www.stitcher.com/podcast/vsporto/now-what-with-arian-foster">
                     Stitcher
-                    <img class="stitcher" src="images/stitcher-icon-logo.png" alt="stitcher logo" />
+                    <img class="stitcher" src="https://cdn.shopify.com/s/files/1/0015/2286/0098/files/stitcher-icon-logo.png?7211721526328424092" alt="stitcher logo" />
                   </a>
                 </li>
                 <li>
